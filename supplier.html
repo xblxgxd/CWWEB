@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GGProMarket</title>
+	<link rel="icon" sizes="32x32" href="./img/favicon-32x32.png">
+	<link rel="stylesheet" href="css/supplier.css">
+	
+</head>
+<body class="page">
+	<header class="header">
+		<div class="header-top-wrapper">
+			<div class="header-top">
+				<div class="header-top__logo-wrapper">
+					<button class="header-top__icon" type="button"><span></span></button>
+					<picture>
+						<source srcset="./img/logo-mobile.svg" media="(max-width: 420px)">
+						<img src="./img/logo.svg" alt="Логотип" class="header-top__logo">
+					</picture>
+				</div>
+				<div class="header-top__location" data-da=".header-menu__list,1080,5">
+					<img src="./img/svg/moscow.svg" alt="Значок локации" class="header-top__location-img">
+					<a href="#" class="header-top__city" data-translate="city">Москва</a>
+				</div>
+				<div class="header-top__call-box" data-da=".header-menu__list,888,6">
+					<a href="tel:84950183210" class="header-top__phone" data-translate="phone">8 495 018-32-10</a>
+					<img src="./img/svg/recall.svg" alt="Значок для телефона" class="header-top__call-img">
+					<a href="#" class="header-top__order-call" data-translate="orderCall">Заказать звонок</a>
+				</div>
+				<nav class="header-menu__items">
+					<img src="./img/logo.svg" alt="Логотип" class="header-menu__logo">
+					<ul class="header-menu__list">
+						<li><a href="#" class="header-menu__link" data-translate="payment">Оплата</a></li>
+						<li><a href="/pages.html" class="header-menu__link" data-translate="delivery">Статьи</a></li>
+						<li><a href="#" class="header-menu__link" data-translate="suppliers">Поставщикам</a></li>
+						<li><a href="index.html" class="header-menu__link" data-translate="home">Главная</a></li>
+						<li><a href="#" class="header-menu__link" data-translate="contacts">Контакты</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div class="header">
+			<h1 data-translate="forSuppliers">Для поставщиков</h1>
+			<p data-translate="description1">Наши компании занимаются реализацией товаров для дома, офиса, строительства и т. п., мы рады сотрудничать с надежными поставщиками товаров и услуг.</p>
+			<p data-translate="dearSupplier">Уважаемый поставщик!</p>
+			<p data-translate="fillForm">Заполните, пожалуйста, данную форму ниже, чтобы отправить информацию о вашем товаре.</p>
+		</div>
+		
+		<div class="container">
+			<h2 data-translate="questionnaire">Опросный лист</h2>
+			<form id="supplierForm">
+				<div class="form-group">
+					<label for="quantity" data-translate="quantityLabel">Количество:</label>
+					<input type="number" id="quantity" required>
+				</div>
+				<div class="form-group">
+					<label for="contact" data-translate="contactLabel">Контактное лицо:</label>
+					<input type="text" id="contact" required>
+				</div>
+				<div class="form-group">
+					<label for="phone" data-translate="phoneLabel">Телефон:</label>
+					<input type="tel" id="phone" required>
+				</div>
+				<div class="form-group">
+					<label for="email" data-translate="emailLabel">Почта:</label>
+					<input type="email" id="email" required>
+				</div>
+				<div class="form-group">
+					<label for="category" data-translate="categoryLabel">Категория товара:</label>
+					<select id="category" required>
+						<option value="" data-translate="selectCategory">Выберите категорию</option>
+						<option value="electronics" data-translate="electronics">Электроника</option>
+						<option value="furniture" data-translate="furniture">Сантехнические приборы</option>
+						<option value="clothing" data-translate="clothing">Аксессуары и комплектующие</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label data-translate="preferencesLabel">Предпочтительные сроки:</label>
+					<input type="text" id="preferences">
+				</div>
+				<button type="button" id="saveButton" data-translate="saveButton">Сохранить в JSON</button>
+			</form>
+		</div>
+
+		<button id="translateBtn">EN</button>
+		<button id="themeToggleBtn">Сменить тему</button>
+		
+		<script src="/js/validation.js"></script>
+		<script src="/js/burger.js"></script>
+		<script src="/js/translatesupplier.js"></script>
+	</section>
+</body>
+</html>

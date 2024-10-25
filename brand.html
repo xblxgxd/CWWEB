@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGProMarket</title>
+    <link rel="icon" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/brand.css">
+    
+</head>
+<body class="page">
+    <header class="header">
+        <div class="header-top-wrapper">
+            <div class="header-top">
+                <div class="header-top__logo-wrapper">
+                    <button class="header-top__icon" type="button"><span></span></button>
+                    <picture>
+                        <source srcset="./img/logo-mobile.svg" media="(max-width: 420px)">
+                        <img src="./img/logo.svg" alt="Логотип" class="header-top__logo">
+                    </picture>
+                </div>
+                <div class="header-top__location" data-da=".header-menu__list,1080,5">
+                    <img src="./img/svg/moscow.svg" alt="Значок локации" class="header-top__location-img">
+                    <a href="#" class="header-top__city" data-translate="city">Москва</a>
+                </div>
+                <div class="header-top__call-box" data-da=".header-menu__list,888,6">
+                    <a href="tel:84950183210" class="header-top__phone" data-translate="phone">8 495 018-32-10</a>
+                    <img src="./img/svg/recall.svg" alt="Значок для телефона" class="header-top__call-img">
+                    <a href="#" class="header-top__order-call" data-translate="orderCall">Заказать звонок</a>
+                </div>
+                <nav class="header-menu__items">
+                    <img src="./img/logo.svg" alt="Логотип" class="header-menu__logo">
+                    <ul class="header-menu__list">
+                        <li><a href="#" class="header-menu__link" data-translate="payment">Оплата</a></li>
+                        <li><a href="#" class="header-menu__link" data-translate="delivery">Доставка</a></li>
+                        <li><a href="#" class="header-menu__link" data-translate="suppliers">Поставщикам</a></li>
+                        <li><a href="index.html" class="header-menu__link" data-translate="home">Главная</a></li>
+                        <li><a href="#" class="header-menu__link" data-translate="contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button id="themeToggleBtn" class="theme-toggle-button">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="brands">
+        <div class="brands__wrapper">
+            <h3 class="brands__title title" data-translate="popularBrands">Популярные бренды</h3>
+            <div class="brands__body">
+                <a href="#" class="brands__item"><img src="./img/brands/01.png" alt="Бренд 1"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/02.png" alt="Бренд 2"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/03.png" alt="Бренд 3"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/04.png" alt="Бренд 4"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/05.png" alt="Бренд 5"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/06.png" alt="Бренд 6"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/07.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/08.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/09.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/10.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/11.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/12.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/13.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/14.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/15.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/16.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/17.png" alt="Брэнды"></a>
+                <a href="#" class="brands__item"><img src="./img/brands/18.png" alt="Брэнды"></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="language-toggle-container">
+        <button id="translateBtn" class="translate-button">EN</button>
+    </div>
+
+    
+    <script src="/js/translatebrand.js"></script>
+    <script src="/js/burger.js"></script>
+</body>
+</html>
