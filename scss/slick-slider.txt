@@ -1,0 +1,83 @@
+//слайдер
+.slick-slider {}
+
+//ограничивающая оболочка
+.slick-list{}
+
+//лента слайдов
+.slick-track{}
+
+
+//слайд
+.slick-slide{}
+
+//слайд активный
+.slick-slide.slick-active{}
+
+//слайд основной
+.slick-slide.slick-current{}
+
+//слайд по центру
+.slick-slide.slick-center{}
+
+
+//стрелка
+.slick-arrow{}
+
+//стрелка влево
+.slick-arrow.slick-prev{}
+
+//стрелка вправо
+.slick-arrow.slick-next{}
+
+//стрелка не активная
+.slick-arrow.slick-disabled{}
+
+
+//точки
+.slick-dots{}
+
+.slick-dots li{}
+
+.slick-dots button{}
+
+
+// слайдер
+$(document).ready(function() {
+  $('.main-block-slider').slick({
+    arrows: true;
+    dots: false,
+    adaptiveHeight: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 300,
+    easing: 'linear',
+    infinite: true,
+    initialSlide: 0,
+    autoplay: false,
+    autoplaySpeed: 5000,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    draggable: true,
+    swipe: true,
+    touchTreshhold: 5,
+    touchMove: true,
+    waitForAnimate: true,
+    centerMode: false,
+    variableWidth: false,
+    rows:1,
+    slidesPerRow: 1,
+    vertical: false,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+	        slidesToShow: 2,
+         }
+       }
+     ]
+    mobileFirst: false,
+    appendArrows: $('.content')
+  });
+});

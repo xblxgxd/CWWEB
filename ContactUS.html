@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/brand.css">
+    <style>
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .translate-button {
+            background-color: #2B7BC6;
+            color: #ffffff;
+        }
+
+        .theme-toggle {
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+
+        .theme-toggle.dark-mode {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        .contact {
+            padding: 100px 15px 50px;
+            background-color: inherit;
+        }
+
+        .contact__wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact__title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact__info {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact__phone {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 20px;
+            color: inherit;
+        }
+
+        @media (max-width: 768px) {
+            .contact__title {
+                font-size: 22px;
+            }
+
+            .contact__info,
+            .contact__phone {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .contact__title {
+                font-size: 20px;
+            }
+
+            .contact__info,
+            .contact__phone {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body class="page light-mode">
+    <header class="header">
+        <div class="header-top-wrapper">
+            <div class="header-top">
+                <div class="header-top__logo-wrapper">
+                    <button class="header-top__icon" type="button"><span></span></button>
+                    <picture>
+                        <source srcset="./img/logo-mobile.svg" media="(max-width: 420px)">
+                        <img src="./img/logo.svg" alt="Логотип" class="header-top__logo">
+                    </picture>
+                </div>
+                <div class="header-top__location">
+                    <img src="./img/svg/moscow.svg" alt="Значок локации" class="header-top__location-img">
+                    <a href="#" class="header-top__city" id="city">Москва</a>
+                </div>
+                <div class="header-top__call-box">
+                    <a href="tel:84950183210" class="header-top__phone" id="phone">8 495 018-32-10</a>
+                    <img src="./img/svg/recall.svg" alt="Значок для телефона" class="header-top__call-img">
+                    <a href="#" class="header-top__order-call" id="orderCall">Заказать звонок</a>
+                </div>
+                <nav class="header-menu__items">
+                    <img src="./img/logo.svg" alt="Логотип" class="header-menu__logo">
+                    <ul class="header-menu__list">
+                        <li><a href="#" class="header-menu__link" id="payment">Оплата</a></li>
+                        <li><a href="/pages.html" class="header-menu__link" id="delivery">Статьи</a></li>
+                        <li><a href="/supplier.html" class="header-menu__link" id="suppliers">Поставщикам</a></li>
+                        <li><a href="index.html" class="header-menu__link" id="home">Главная</a></li>
+                        <li><a href="/ContactUS.html" class="header-menu__link" id="contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="contact">
+        <div class="contact__wrapper">
+            <h3 class="contact__title" id="contactTitle">Связаться с нами</h3>
+            <p class="contact__info" id="contactInfo">Если у вас есть вопросы, свяжитесь с нами по телефону:</p>
+            <a href="tel:84950183210" class="contact__phone">8 495 018-32-10</a>
+            <p class="contact__info" id="emailInfo">Или напишите нам по электронной почте: <a href="mailto:info@example.com">info@example.com</a></p>
+        </div>
+        <button id="translateBtn" class="btn translate-button">EN</button>
+        <button id="themeToggle" class="btn theme-toggle">Тема</button>
+    </section>
+   <script src="/js/translationContact.js"></script>
+</body>
+</html>
