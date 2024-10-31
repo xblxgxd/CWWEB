@@ -50,6 +50,7 @@
         </div>
         <a href="" class="header-bottom__stock" data-da=".header-menu__list,888,5">АКЦИИ</a>
         <a href="brand.html" class="header-bottom__brands"data-da=".header-menu__list,888,5">БРЕНДЫ</a>
+        <a href="/index2.html" class="header-bottom__brands"data-da=".header-menu__list,888,5">Выход из аккаунта</a>
       </div>
       <div class="header-bottom__search header-search">
         <form action="#" class="header-search__search">
@@ -58,7 +59,7 @@
         </form>
       </div>
       <div class="header-bottom__actions" data-da=".header-top,1300,last">
-        <button class="header-bottom__user header-bottom__user_1"><img src="./img/svg/registr.svg" alt="Кнопка регистрации"></button>
+        <button class="header-bottom__user header-bottom__user_1"><img src="/img/svg/registr.svg" alt="Кнопка регистрации"></button>
         <button class="header-bottom__user header-bottom__user_2"><img src="./img/svg/like.svg" alt="Кнопка регистрации"></button>
         <button class="header-bottom__user header-bottom__user_3"><img src="./img/svg/cart.svg" alt="Кнопка регистрации"></button>
       </div>
@@ -565,6 +566,45 @@
       </div>
     </div>
   </section>
+  <html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта с моим местоположением</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        section8 {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #mapContainer8 {
+            height: 50%;
+            width: 70%;
+        }
+    </style>
+</head>
+<section8>
+    <div id="mapContainer8"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Используйте ваше местоположение
+        const userLocation8 = [53.907574, 30.343434]; // Пример: Москва
+
+        const map8 = L.map('mapContainer8').setView(userLocation8, 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map8);
+
+        const marker8 = L.marker(userLocation8).addTo(map8);
+        marker8.bindPopup('Я здесь!').openPopup();
+    </script>
+</section8>
+</html>
   <footer class="footer">
     <div class="footer__top footer-top">
       <div class="footer-top__body">
