@@ -1,74 +1,52 @@
-const translations = {
-    en: {
-        city: "Moscow",
-        phone: "8 495 018-32-10",
-        orderCall: "Order a call",
-        payment: "Payment",
-        delivery: "Delivery",
-        suppliers: "For Suppliers",
-        home: "Home",
-        contacts: "Contacts",
-        forSuppliers: "For Suppliers",
-        description1: "Our companies are engaged in the sale of goods for home, office, construction, etc. We are happy to cooperate with reliable suppliers of goods and services.",
-        dearSupplier: "Dear Supplier!",
-        fillForm: "Please fill out the form below to send information about your product.",
-        questionnaire: "Questionnaire",
-        quantityLabel: "Quantity:",
-        contactLabel: "Contact Person:",
-        phoneLabel: "Phone:",
-        emailLabel: "Email:",
-        categoryLabel: "Product Category:",
-        selectCategory: "Select a category",
-        electronics: "Electronics",
-        furniture: "Furniture",
-        clothing: "Clothing",
-        preferencesLabel: "Preferred Terms:",
-        saveButton: "Save as JSON"
-    },
-    ru: {
-        city: "Москва",
-        phone: "8 495 018-32-10",
-        orderCall: "Заказать звонок",
-        payment: "Оплата",
-        delivery: "Доставка",
-        suppliers: "Поставщикам",
-        home: "Главная",
-        contacts: "Контакты",
-        forSuppliers: "Для поставщиков",
-        description1: "Наши компании занимаются реализацией товаров для дома, офиса, строительства и т. п., мы рады сотрудничать с надежными поставщиками товаров и услуг.",
-        dearSupplier: "Уважаемый поставщик!",
-        fillForm: "Заполните, пожалуйста, данную форму ниже, чтобы отправить информацию о вашем товаре.",
-        questionnaire: "Опросный лист",
-        quantityLabel: "Количество:",
-        contactLabel: "Контактное лицо:",
-        phoneLabel: "Телефон:",
-        emailLabel: "Почта:",
-        categoryLabel: "Категория товара:",
-        selectCategory: "Выберите категорию",
-        electronics: "Электроника",
-        furniture: "Мебель",
-        clothing: "Одежда",
-        preferencesLabel: "Предпочтительные сроки:",
-        saveButton: "Сохранить в JSON"
-    }
-};
+var translations = {};
 
-const translateBtn = document.getElementById('translateBtn');
-let currentLang = 'ru';
-
-translateBtn.addEventListener('click', () => {
-    currentLang = currentLang === 'ru' ? 'en' : 'ru';
-    translatePage(currentLang);
-    translateBtn.textContent = currentLang === 'en' ? 'RU' : 'EN';
-});
-
-function translatePage(lang) {
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        element.textContent = translations[lang][key];
-    });
+function loadTranslations() {
+  return fetch('/js/translationsupplier.json')
+    .then(response => response.json())
+    .then(data => {
+      translations = data;
+    })
+    .catch(error => console.error('Error loading translations:', error));
 }
-const themeToggleBtn = document.getElementById('themeToggleBtn');
-			themeToggleBtn.addEventListener('click', () => {
-				document.body.classList.toggle('dark-theme');
-			});
+
+function toggleLanguage() {
+  var currentLanguage = document.documentElement.lang || 'en';
+  localStorage.setItem('language','en');
+  if (currentLanguage === 'en') {
+    applyTranslations('ru');
+    document.documentElement.lang = 'ru';
+    document.getElementById('translateBtn').textContent = 'Русский';
+    localStorage.setItem('language','ru');
+  } else {
+    applyTranslations('en');
+    document.documentElement.lang = 'en';
+    document.getElementById('translateBtn').textContent = 'English';
+    localStorage.setItem('language','en');
+  }
+}
+
+function applyTranslations(lang) {
+  var translation = translations[lang];
+
+  var elements = document.querySelectorAll('[id]');
+  elements.forEach(function(element) {
+    var translationKey = element.getAttribute('id');
+    if (translationKey && translation[translationKey]) {
+      element.innerHTML = translation[translationKey];
+    }
+  });
+}
+
+loadTranslations().then(() => {
+  var userLanguage = navigator.language.substr(0, 2); 
+  if (localStorage.getItem('language')==='en') {
+    applyTranslations('en');
+    document.documentElement.lang = 'en';
+    document.getElementById('translateBtn').textContent = 'English';
+    
+  } else {
+    applyTranslations('ru');
+    document.documentElement.lang = 'ru';
+    document.getElementById('translateBtn').textContent = 'Русский';
+  }
+});

@@ -567,11 +567,6 @@ body._ibg img {
 }
 
 /* Dark Theme */
-body.dark-theme {
-    background-color: #333;
-    color: #fff;
-}
-
 .theme-toggle-button {
     position: fixed;
     top: 20px;

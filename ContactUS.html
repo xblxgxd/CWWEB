@@ -8,12 +8,12 @@
     <link rel="icon" sizes="32x32" href="./img/favicon-32x32.png">
     <link rel="stylesheet" href="css/brand.css">
     <style>
-        body.light-mode {
+        body.light-theme {
             background-color: #ffffff;
             color: #000000;
         }
 
-        body.dark-mode {
+        body.dark-theme {
             background-color: #1a1a1a;
             color: #ffffff;
         }
@@ -132,9 +132,10 @@
             <a href="tel:84950183210" class="contact__phone">8 495 018-32-10</a>
             <p class="contact__info" id="emailInfo">Или напишите нам по электронной почте: <a href="mailto:info@example.com">info@example.com</a></p>
         </div>
-        <button id="translateBtn" class="btn translate-button">EN</button>
-        <button id="themeToggle" class="btn theme-toggle">Тема</button>
+        <button id="translateBtn" class="btn translate-button" onclick="toggleLanguage()">EN</button>
+        <button id="themeToggleBtn" onclick="toggleTheme()" class="btn theme-toggle">Тема</button>
     </section>
-   <script src="/js/translationContact.js"></script>
+    <script src="/js/themebrand3.js"></script>
+   <script src="/js/translatecontact.js"></script>
 </body>
 </html>
