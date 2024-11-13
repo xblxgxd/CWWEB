@@ -21,7 +21,7 @@
         </div>
         <div class="header-top__location" data-da=".header-menu__list,1080,5">
           <img src="./img/svg/moscow.svg" alt="Значок локации" class="header-top__location-img">
-          <a href="#" class="header-top__city">Москва</a>
+          <a href="#" class="header-top__city" id="city">Москва</a>
         </div>
         <div class="header-top__call-box" data-da=".header-menu__list,888,6">
           <a href="tel:84950183210" class="header-top__phone">8 495 018-32-10</a>
@@ -31,11 +31,11 @@
         <nav class="header-menu__items">
           <img src="./img/logo.svg" alt="Логотип" class="header-menu__logo">
           <ul class="header-menu__list">
-            <li><a href="#" class="header-menu__link">Оплата</a></li>
-            <li><a href="#" class="header-menu__link">Доставка</a></li>
-            <li><a href="/supplier.html" class="header-menu__link">Поставщикам</a></li>
-            <li><a href="/pages.html" class="header-menu__link">Статьи</a></li>
-            <li><a href="/ContactUS.html" class="header-menu__link">Контакты</a></li>
+            <li><a href="#" class="header-menu__link" id="payment">Оплата</a></li>
+            <li><a href="#" class="header-menu__link" id="delivery">Доставка</a></li>
+            <li><a href="/supplier.html" class="header-menu__link" id="suppliers">Поставщикам</a></li>
+            <li><a href="/pages.html" class="header-menu__link" id="articles">Статьи</a></li>
+            <li><a href="/ContactUS.html" class="header-menu__link" id="contacts">Контакты</a></li>
           </ul>
         </nav>
       </div>
@@ -45,21 +45,22 @@
         <div class="header-bottom__catalog header-catalog">
           <a class="header-catalog__btn" data-da=".main-block__body,500,3">
             <div class="header-catalog__icon"><span></span><span></span><span></span></div>
-            <p class="header-catalog__text">КАТАЛОГ ТОВАРОВ</p>
+            <p class="header-catalog__text" id="catalog">КАТАЛОГ ТОВАРОВ</p>
           </a>
         </div>
-        <a href="" class="header-bottom__stock" data-da=".header-menu__list,888,5">АКЦИИ</a>
-        <a href="brand.html" class="header-bottom__brands"data-da=".header-menu__list,888,5">БРЕНДЫ</a>
-        <a href="/index2.html" class="header-bottom__brands"data-da=".header-menu__list,888,5">Выход из аккаунта</a>
+        <a href="" class="header-bottom__stock" data-da=".header-menu__list,888,5" id="sales">АКЦИИ</a>
+        <a href="brand.html" class="header-bottom__brands"data-da=".header-menu__list,888,5" id="brands">БРЕНДЫ</a>
+        <a href="/index2.html" class="header-bottom__brands"data-da=".header-menu__list,888,5" id="exit">Выход из аккаунта</a>
       </div>
       <div class="header-bottom__search header-search">
         <form action="#" class="header-search__search">
-          <input type="text" class="header-search__input" placeholder="Что вы ищете?" autocomplete="off">
+          <input type="text" class="header-search__input" id="description1" placeholder="Что вы ищете?" autocomplete="off">
           <button class="header-search__send"><img src="./img/svg/search.svg" alt="кнопка поиска"></button>
         </form>
       </div>
       <div class="header-bottom__actions" data-da=".header-top,1300,last">
         <button class="header-bottom__user header-bottom__user_1"><img src="" alt=""></button>
+        <button class="header-bottom__user header-bottom__user_1" id="translateBtn" onclick="toggleLanguage()">EN</button>
         <button class="header-bottom__user header-bottom__user_2"><img src="./img/svg/like.svg" alt="Кнопка регистрации"></button>
         <button class="header-bottom__user header-bottom__user_3"><img src="./img/svg/cart.svg" alt="Кнопка регистрации"></button>
       </div>
@@ -70,28 +71,28 @@
       <div class="main-block__slider main-block-slider">
         <div class="main-block-slider__slide slider_item_01">
           <div class="main-block-slider__item">
-            <h3 class="main-block-slider__title">СМЕСИТЕЛИ RAIBER</h3>
-            <p class="main-block-slider__text">уже в наличии</p>
-            <a href="#" class="main-block-slider__btn">ПОДРОБНЕЕ</a>
+            <h3 class="main-block-slider__title" id="tap">СМЕСИТЕЛИ RAIBER</h3>
+            <p class="main-block-slider__text" id="stock">уже в наличии</p>
+            <a href="#" class="main-block-slider__btn" id="more">ПОДРОБНЕЕ</a>
           </div>
         </div>
         <div class="main-block-slider__slide slider_item_02">
           <div class="main-block-slider__item">
-            <h3 class="main-block-slider__title">ПЛИТКА LAPARET</h3>
-            <p class="main-block-slider__text">уже в наличии</p>
-            <a href="#" class="main-block-slider__btn">ПОДРОБНЕЕ</a>
+            <h3 class="main-block-slider__title" id="tile">ПЛИТКА LAPARET</h3>
+            <p class="main-block-slider__text" id="stock">уже в наличии</p>
+            <a href="#" class="main-block-slider__btn" id="more">ПОДРОБНЕЕ</a>
           </div>
         </div>
         <div class="main-block-slider__slide slider_item_03">
           <div class="main-block-slider__item">
-            <h3 class="main-block-slider__title">ВАННА NEWCAST</h3>
-            <p class="main-block-slider__text">уже в наличии</p>
-            <a href="#" class="main-block-slider__btn">ПОДРОБНЕЕ</a>
+            <h3 class="main-block-slider__title" id="bath">ВАННА NEWCAST</h3>
+            <p class="main-block-slider__text" id="stock">уже в наличии</p>
+            <a href="#" class="main-block-slider__btn" id="more">ПОДРОБНЕЕ</a>
           </div>
         </div>
         <div class="main-block-slider__slide slider_item_04">
           <div class="main-block-slider__item">
-            <h3 class="main-block-slider__title">ДУШЕВАЯ RAIBER</h3>
+            <h3 class="main-block-slider__title" id="shower">ДУШЕВАЯ RAIBER</h3>
             <p class="main-block-slider__text">уже в наличии</p>
             <a href="#" class="main-block-slider__btn">ПОДРОБНЕЕ</a>
           </div>
