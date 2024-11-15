@@ -74,28 +74,28 @@
             <a href="#" class="main-block-slider__btn">ПОДРОБНЕЕ</a>
           </div>
         </div>
-        <div class="main-block-slider__slide slider_item_02">
+        <div class="main-block-slider__slide slider_item_02" style="display: none;">
           <div class="main-block-slider__item">
             <h3 class="main-block-slider__title">ПЛИТКА LAPARET</h3>
             <p class="main-block-slider__text">уже в наличии</p>
             <a href="#" class="main-block-slider__btn">ПОДРОБНЕЕ</a>
           </div>
         </div>
-        <div class="main-block-slider__slide slider_item_03">
+        <div class="main-block-slider__slide slider_item_03" style="display: none;">
           <div class="main-block-slider__item">
             <h3 class="main-block-slider__title">ВАННА NEWCAST</h3>
             <p class="main-block-slider__text">уже в наличии</p>
             <a href="#" class="main-block-slider__btn">ПОДРОБНЕЕ</a>
           </div>
         </div>
-        <d class="main-block-slider__slide slider_item_04">
+        <d class="main-block-slider__slide slider_item_04" style="display: none;">
           <div class="main-block-slider__item">
             <h3 class="main-block-slider__title">ДУШЕВАЯ RAIBER</h3>
             <p class="main-block-slider__text">уже в наличии</p>
             <a href="#" class="main-block-slider__btn">ПОДРОБНЕЕ</a>
           </div>
         </d iv>
-        <div class="main-block-slider__slide slider_item_05">
+        <div class="main-block-slider__slide slider_item_05" style="display: none;">
           <div class="main-block-slider__item">
             <h3 class="main-block-slider__title">РАКОВИНА ROCA</h3>
             <p class="main-block-slider__text">уже в наличии</p>
@@ -362,80 +362,85 @@
 </div>
 
 <script>
-    const allowedPhonePrefix = '+375'; // Belarus phone prefix
-    let users = []; // Array to store registered users
-    let nicknameCount = 0;
+  const allowedPhonePrefix = '+375'; // Belarus phone prefix
+  let users = []; // Array to store registered users
+  let nicknameCount = 0;
 
-    document.getElementById('generateNicknameButton').addEventListener('click', function() {
-        const randomNickname = generateRandomNickname();
-        document.getElementById('nickname').value = randomNickname;
-    });
+  document.getElementById('generateNicknameButton').addEventListener('click', function() {
+      if (nicknameCount < 6) {
+          const randomNickname = generateRandomNickname();
+          document.getElementById('nickname').value = randomNickname;
+          nicknameCount++;
+      } else {
+          alert('Вы уже сгенерировали максимальное количество никнеймов.');
+      }
+  });
 
-    document.getElementById('registerButton').addEventListener('click', function() {
-        const nickname = document.getElementById('nickname').value;
-        const email = document.getElementById('regEmail').value;
-        const phone = document.getElementById('phone').value;
-        const dob = new Date(document.getElementById('dob').value);
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-        const userRole = document.querySelector('input[name="userRole"]:checked').value;
-        const agreementChecked = document.getElementById('agreement').checked;
+  document.getElementById('registerButton').addEventListener('click', function() {
+      const nickname = document.getElementById('nickname').value;
+      const email = document.getElementById('regEmail').value;
+      const phone = document.getElementById('phone').value;
+      const dob = new Date(document.getElementById('dob').value);
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const userRole = document.querySelector('input[name="userRole"]:checked').value;
+      const agreementChecked = document.getElementById('agreement').checked;
 
-        // Validate email format
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-            alert('Введите корректный email.');
-            return;
-        }
+      // Validate email format
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+          alert('Введите корректный email.');
+          return;
+      }
 
-        // Validate phone number
-        if (!phone.startsWith(allowedPhonePrefix) || phone.length !== 13) {
-            alert('Номер телефона должен начинаться с +375 и содержать 13 цифр.');
-            return;
-        }
+      // Validate phone number
+      if (!phone.startsWith(allowedPhonePrefix) || phone.length !== 13) {
+          alert('Номер телефона должен начинаться с +375 и содержать 13 цифр.');
+          return;
+      }
 
-        // Validate date of birth
-        const today = new Date();
-        const age = today.getFullYear() - dob.getFullYear();
-        const isBirthdayPassed = today.getMonth() > dob.getMonth() || (today.getMonth() === dob.getMonth() && today.getDate() >= dob.getDate());
-        if (age < 16 || (age === 16 && !isBirthdayPassed)) {
-            alert('Вы должны быть не моложе 16 лет для регистрации.');
-            return;
-        }
+      // Validate date of birth
+      const today = new Date();
+      const age = today.getFullYear() - dob.getFullYear();
+      const isBirthdayPassed = today.getMonth() > dob.getMonth() || (today.getMonth() === dob.getMonth() && today.getDate() >= dob.getDate());
+      if (age < 16 || (age === 16 && !isBirthdayPassed)) {
+          alert('Вы должны быть не моложе 16 лет для регистрации.');
+          return;
+      }
 
-        // Check if agreement is accepted
-        if (!agreementChecked) {
-            alert('Вы должны согласиться с пользовательским соглашением.');
-            return;
-        }
+      // Check if agreement is accepted
+      if (!agreementChecked) {
+          alert('Вы должны согласиться с пользовательским соглашением.');
+          return;
+      }
 
-        // Validate password
-        const passwordPattern = /^(?=.*[A-Z])(?=.*[\W_])(?=.{6,})/; // At least 6 characters, 1 uppercase, 1 special character
-        if (!passwordPattern.test(password)) {
-            alert('Пароль должен содержать как минимум 6 символов, 1 заглавную букву и 1 специальный знак.');
-            return;
-        }
+      // Validate password
+      const passwordPattern = /^(?=.*[A-Z])(?=.*[\W_])(?=.{6,})/; // At least 6 characters, 1 uppercase, 1 special character
+      if (!passwordPattern.test(password)) {
+          alert('Пароль должен содержать как минимум 6 символов, 1 заглавную букву и 1 специальный знак.');
+          return;
+      }
 
-        // Validate password confirmation
-        if (password !== confirmPassword) {
-            alert('Пароли не совпадают.');
-            return;
-        }
+      // Validate password confirmation
+      if (password !== confirmPassword) {
+          alert('Пароли не совпадают.');
+          return;
+      }
 
-        // Generate nickname if not provided
-        if (!nickname) {
-            if (nicknameCount < 5) {
-                const randomNickname = generateRandomNickname();
-                document.getElementById('nickname').value = randomNickname;
-                nicknameCount++;
-            } else {
-                alert('Вы уже сгенерировали максимальное количество никнеймов.');
-                return;
-            }
-        }
+      // Generate nickname if not provided
+      if (!nickname) {
+          if (nicknameCount < 6) {
+              const randomNickname = generateRandomNickname();
+              document.getElementById('nickname').value = randomNickname;
+              nicknameCount++;
+          } else {
+              alert('Вы уже сгенерировали максимальное количество никнеймов.');
+              return;
+          }
+      }
 
-        // Register user
-        users.push({ nickname, email, phone, dob: dob.toISOString().split('T')[0], password, role: userRole });
+      // Register user
+      users.push({ nickname, email, phone, dob: dob.toISOString().split('T')[0], password, role: userRole });
         alert('Вы успешно зарегистрированы!');
         switchToLoginTab();
     });
@@ -451,7 +456,7 @@
     function switchToLoginTab() {
         document.querySelector('.user-tab-01').classList.add('_active');
         document.querySelector('.user-tab-02').classList.remove('_active');
-        document.querySelector('.popup-user__select-tab[_active]').classList.remove('_active');
+        document.querySelector('.popup-user__select-tab._active').classList.remove('_active');
         document.querySelector('.popup-user__select-tab[data-user-tab="user-tab-01"]').classList.add('_active');
         document.getElementById('nickname').value = ''; // Clear nickname field
         document.getElementById('registrationForm').reset(); // Reset registration form
