@@ -1,0 +1,26 @@
+{
+    "ru": {
+        "city": "Москва",
+        "orderCall": "Заказать звонок",
+        "payment": "Оплата",
+        "delivery": "Доставка",
+        "suppliers": "Поставщикам",
+        "home": "Главная",
+        "contacts": "Контакты",
+        "contactTitle": "Связаться с нами",
+        "contactInfo": "Если у вас есть вопросы, свяжитесь с нами по телефону:",
+        "emailInfo": "Или напишите нам по электронной почте:"
+    },
+    "en": {
+        "city": "Moscow",
+        "orderCall": "Request a call",
+        "payment": "Payment",
+        "delivery": "Delivery",
+        "suppliers": "Suppliers",
+        "home": "Home",
+        "contacts": "Contacts",
+        "contactTitle": "Contact Us",
+        "contactInfo": "If you have any questions, contact us by phone:",
+        "emailInfo": "Or email us at:"
+    }
+}

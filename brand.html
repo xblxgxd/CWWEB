@@ -22,31 +22,31 @@
                 </div>
                 <div class="header-top__location" data-da=".header-menu__list,1080,5">
                     <img src="./img/svg/moscow.svg" alt="Значок локации" class="header-top__location-img">
-                    <a href="#" class="header-top__city" data-translate="city">Москва</a>
+                    <a href="#" class="header-top__city" id="city">Москва</a>
                 </div>
                 <div class="header-top__call-box" data-da=".header-menu__list,888,6">
-                    <a href="tel:84950183210" class="header-top__phone" data-translate="phone">8 495 018-32-10</a>
+                    <a href="tel:84950183210" class="header-top__phone" id="phone">8 495 018-32-10</a>
                     <img src="./img/svg/recall.svg" alt="Значок для телефона" class="header-top__call-img">
-                    <a href="#" class="header-top__order-call" data-translate="orderCall">Заказать звонок</a>
+                    <a href="#" class="header-top__order-call" id="orderCall">Заказать звонок</a>
                 </div>
                 <nav class="header-menu__items">
                     <img src="./img/logo.svg" alt="Логотип" class="header-menu__logo">
                     <ul class="header-menu__list">
-                        <li><a href="#" class="header-menu__link" data-translate="payment">Оплата</a></li>
-                        <li><a href="#" class="header-menu__link" data-translate="delivery">Доставка</a></li>
-                        <li><a href="#" class="header-menu__link" data-translate="suppliers">Поставщикам</a></li>
-                        <li><a href="index.html" class="header-menu__link" data-translate="home">Главная</a></li>
-                        <li><a href="#" class="header-menu__link" data-translate="contacts">Контакты</a></li>
+                        <li><a href="#" class="header-menu__link" id="payment">Оплата</a></li>
+                        <li><a href="#" class="header-menu__link" id="delivery">Доставка</a></li>
+                        <li><a href="#" class="header-menu__link" id="suppliers">Поставщикам</a></li>
+                        <li><a href="index.html" class="header-menu__link" id="home">Главная</a></li>
+                        <li><a href="#" class="header-menu__link" id="contacts">Контакты</a></li>
                     </ul>
                 </nav>
-                <button id="themeToggleBtn" class="theme-toggle-button">🌙</button>
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="theme-toggle-button">🌙</button>
             </div>
         </div>
     </header>
 
     <section class="brands">
         <div class="brands__wrapper">
-            <h3 class="brands__title title" data-translate="popularBrands">Популярные бренды</h3>
+            <h3 class="brands__title title" id="popularBrands">Популярные бренды</h3>
             <div class="brands__body">
                 <a href="#" class="brands__item"><img src="./img/brands/01.png" alt="Бренд 1"></a>
                 <a href="#" class="brands__item"><img src="./img/brands/02.png" alt="Бренд 2"></a>
@@ -71,11 +71,12 @@
     </section>
 
     <div class="language-toggle-container">
-        <button id="translateBtn" class="translate-button">EN</button>
+        <button id="translateBtn" class="translate-button" onclick="toggleLanguage()">en</button>
     </div>
 
     
     <script src="/js/translatebrand.js"></script>
     <script src="/js/burger.js"></script>
+    <script src="/js/themebrand2.js"></script>
 </body>
 </html>

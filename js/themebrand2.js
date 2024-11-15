@@ -1,4 +1,5 @@
 var themeToggleButton = document.getElementById('themeToggleBtn');
+var header = document.getElementsByClassName("header");
 function toggleTheme() {
     localStorage.setItem('body-theme', 'light-theme')
     body.classList.toggle("dark-theme");
