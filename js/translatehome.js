@@ -1,7 +1,7 @@
 var translations = {};
 
 function loadTranslations() {
-  return fetch('/js/translationhome.json')
+  return fetch('/CWWEB/js/translationhome.json')
     .then(response => response.json())
     .then(data => {
       translations = data;
