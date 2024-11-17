@@ -1,0 +1,24 @@
+{
+    "en": {
+        "city": "Moscow",
+        "phone": "8 495 018-32-10",
+        "orderCall": "Order a call",
+        "payment": "Payment",
+        "delivery": "Delivery",
+        "suppliers": "Suppliers",
+        "home": "Home",
+        "contacts": "Contacts",
+        "popularBrands": "Popular Brands"
+    },
+    "ru": {
+        "city": "Москва",
+        "phone": "8 495 018-32-10",
+        "orderCall": "Заказать звонок",
+        "payment": "Оплата",
+        "delivery": "Доставка",
+        "suppliers": "Поставщикам",
+        "home": "Главная",
+        "contacts": "Контакты",
+        "popularBrands": "Популярные бренды"
+    }
+}
