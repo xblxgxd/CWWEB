@@ -363,7 +363,7 @@
 
 <script>
   const allowedPhonePrefix = '+375'; // Belarus phone prefix
-  let users = []; // Array to store registered users
+  let users = JSON.parse(localStorage.getItem('users')) || [];
   let nicknameCount = 0;
 
   document.getElementById('generateNicknameButton').addEventListener('click', function() {
@@ -440,7 +440,8 @@
       }
 
       // Register user
-      users.push({ nickname, email, phone, dob: dob.toISOString().split('T')[0], password, role: userRole });
+      users.push({ nickname, email, phone, dob: dob.toISOString().split('T')[0], password, role: userRole }); 
+        localStorage.setItem('users', JSON.stringify(users));
         alert('Вы успешно зарегистрированы!');
         switchToLoginTab();
     });
@@ -467,12 +468,10 @@
         const email = emalInput?.value || 'testEmail';
         const passwordInput = document.querySelector('#loginForm input[type="password"]');
         const password = passwordInput?.value || 'testPassword'
-        console.log('email - ',email)
-        console.log('password - ',password)
+        
         // Simulate login validation
         const user = users.find(user => user.email === email && user.password === password);
-        console.log('user - ',user)
-        console.log('users- ',users)
+        
         if (user) {
         alert('Вы успешно вошли!');
         document.getElementById('additionalButtons').style.display = 'block';
@@ -490,9 +489,9 @@
 
     document.getElementById('goToSiteButton').addEventListener('click', function() {
         // Logic to navigate to another site
-        window.location.href = '/index.html'; // Change to your site URL
+        window.location.href = '/CWWEB/index.html'; // Change to your site URL
     });
-
+    
     // Toggle password visibility
     document.getElementById('showPassword').addEventListener('click', function() {
         const passwordField = document.getElementById('password');
