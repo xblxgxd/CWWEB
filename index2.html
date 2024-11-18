@@ -466,7 +466,7 @@
     document.getElementById('loginButton').addEventListener('click', function() {
         const emalInput = document.querySelector('#loginForm input[type="email"]')
         const email = emalInput?.value || 'testEmail';
-        const passwordInput = document.querySelector('#loginForm input[type="password"]');
+        const passwordInput = document.getElementById('loginPassword');
         const password = passwordInput?.value || 'testPassword'
         
         // Simulate login validation
