@@ -512,9 +512,7 @@ body._ibg img {
       padding-bottom: 30px;
     }
   }
-body.dark-theme .brands {
-    background-color: #1e1e1e !important;
-  }
+
   
   .brands__wrapper {
     max-width: 1540px;
@@ -586,6 +584,9 @@ body.dark-theme {
   background-color: #1e1e1e;
   color: #f5f5f5;
 }
+body.dark-theme .brands {
+  background-color: #1e1e1e !important;
+  }
 
 .header.dark-theme {
   background-color: #333;
