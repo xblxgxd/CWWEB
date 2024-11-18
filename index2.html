@@ -362,6 +362,7 @@
 </div>
 
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
   const allowedPhonePrefix = '+375'; // Belarus phone prefix
   let users = JSON.parse(localStorage.getItem('users')) || [];
   let nicknameCount = 0;
@@ -521,6 +522,7 @@
             modal.style.display = 'none';
         }
     };
+  })
 </script>
 
 <style>
