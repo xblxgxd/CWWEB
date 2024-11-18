@@ -512,7 +512,7 @@ body._ibg img {
       padding-bottom: 30px;
     }
   }
-.body.dark-theme .brands {
+body.dark-theme .brands {
     background-color: #1e1e1e !important;
   }
   
