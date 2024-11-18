@@ -503,6 +503,7 @@ body._ibg img {
   width: 100%;
 }
 .brands {
+    margin-top: 65px;
     padding: 0 15px 50px;
     background-color: #f5f5f5;
   }
@@ -510,6 +511,9 @@ body._ibg img {
     .brands {
       padding-bottom: 30px;
     }
+  }
+.body.dark-theme .brands {
+    background-color: #1e1e1e !important;
   }
   
   .brands__wrapper {
